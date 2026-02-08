@@ -3,297 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD Riyad Hasan Noyon | Cybersecurity Enthusiast</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="MD Riyad Hasan Noyon - Computer Science Student & Cybersecurity Enthusiast from Bangladesh">
+    <meta name="author" content="MD Riyad Hasan Noyon">
+    
+    <title>Riyad Hasan | CS & Cybersecurity</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 </head>
 <body>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-user-shield me-2"></i>Riyad Hasan
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <a href="#" class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 5L35 30H5L20 5Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <circle cx="20" cy="22" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="menu-toggle" id="menuToggle">
+                <span>Menu</span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+        </div>
+        
+        <div class="nav-actions">
+            <a href="#contact" class="btn-hire">
+                <i class="bi bi-chat-dots"></i>
+                Hire me
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center">
-                    <div class="profile-picture">
-                        <!-- Replace with your photo in assets/profile.jpg -->
-                        <img src="assets/profile.jpg" alt="MD Riyad Hasan Noyon" class="img-fluid rounded-circle">
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <h1 class="display-4 fw-bold">MD RIYAD HASAN NOYON</h1>
-                    <p class="lead">Computer Science Student | Cybersecurity Enthusiast</p>
-                    <p class="text-muted">
-                        <i class="fas fa-map-marker-alt me-2"></i>
-                        Boalia - 6760, Ullapara, Sirajganj, Bangladesh
-                    </p>
-                    <div class="mt-4">
-                        <a href="#contact" class="btn btn-primary btn-lg me-3">
-                            <i class="fas fa-envelope me-2"></i>Contact Me
-                        </a>
-                        <a href="assets/cv.pdf" class="btn btn-outline-light btn-lg" download>
-                            <i class="fas fa-download me-2"></i>Download CV
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Full Screen Menu -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <div class="menu-header">
+            <span>Close Menu</span>
+            <button class="menu-close" id="menuClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
         </div>
-    </section>
-
-    <!-- About/Summary Section -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-user me-3"></i>SUMMARY</h2>
-            <div class="card shadow">
-                <div class="card-body">
-                    <p class="card-text">
-                        Aspiring undergraduate student in Computer Science with a strong interest in Cybersecurity 
-                        and secure computing, seeking an academic environment to build a solid foundation in programming, 
-                        algorithms, and system security. My goal is to develop strong analytical and problem-solving 
-                        skills to understand, design, and protect modern computing systems while contributing to ethical 
-                        and impactful technological solutions.
-                    </p>
-                </div>
+        
+        <div class="menu-content">
+            <div class="menu-links">
+                <a href="#home" class="menu-link">
+                    <span class="menu-number">01</span>
+                    <span class="menu-text">Home</span>
+                    <span class="menu-desc">Back to the home page.</span>
+                </a>
+                <a href="#about" class="menu-link">
+                    <span class="menu-number">02</span>
+                    <span class="menu-text">About</span>
+                    <span class="menu-desc">A little about me and my background.</span>
+                </a>
+                <a href="#experience" class="menu-link">
+                    <span class="menu-number">03</span>
+                    <span class="menu-text">Experience</span>
+                    <span class="menu-desc">My work and volunteer history.</span>
+                </a>
+                <a href="#projects" class="menu-link">
+                    <span class="menu-number">04</span>
+                    <span class="menu-text">Projects</span>
+                    <span class="menu-desc">My latest work and research.</span>
+                </a>
+                <a href="#contact" class="menu-link">
+                    <span class="menu-number">05</span>
+                    <span class="menu-text">Contact</span>
+                    <span class="menu-desc">Let's work together.</span>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Work Experience -->
-    <section id="experience" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-briefcase me-3"></i>WORK EXPERIENCE</h2>
-            <div class="card shadow">
-                <div class="card-body">
-                    <h3 class="card-title">Bangladesh Red Crescent Society (BDRCS)</h3>
-                    <h5 class="text-muted">Volunteer & Assistant Coordinator (ICT, Media & Communication)</h5>
-                    <ul class="list-group list-group-flush mt-3">
-                        <li class="list-group-item">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Volunteered for over one year in community awareness programs on health, sanitation, and disaster preparedness.
-                        </li>
-                        <li class="list-group-item">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Assisted in humanitarian response during the Sylhet floods, supporting coordination and food distribution.
-                        </li>
-                        <li class="list-group-item">
-                            <i class="fas fa-check-circle text-success me-2"></i>
-                            Supported digital communication, media coordination, and team management as Assistant Coordinator, 
-                            demonstrating leadership and teamwork skills.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section-padding">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-code me-3"></i>PROJECT WORK</h2>
             
-            <div class="row">
+            <div class="menu-socials">
+                <a href="#" class="social-link">Follow me on LinkedIn</a>
+                <a href="#" class="social-link">Visit my GitHub</a>
+                <a href="#" class="social-link">Follow me on Twitter</a>
+                <a href="mailto:mdrivadhasannoyon@gmail.com" class="social-link">Send me an Email</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="line">Hi, my</span>
+                <span class="line">
+                    name is <em class="highlight">Riyad</em>.
+                </span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                I'm a <strong>Computer Science student</strong> & <strong>Cybersecurity enthusiast</strong> 
+                from <em>Sirajganj, Bangladesh</em>.
+            </p>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="avatar-container">
+                <svg class="avatar" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background Pattern -->
+                    <defs>
+                        <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="8" height="8">
+                            <path d="M-2,2 l4,-4 M0,8 l8,-8 M6,10 l4,-4" stroke="#6366f1" stroke-width="1" opacity="0.3"/>
+                        </pattern>
+                    </defs>
+                    
+                    <!-- Background Shape -->
+                    <rect x="50" y="100" width="300" height="250" fill="url(#diagonalHatch)" rx="10"/>
+                    
+                    <!-- Head -->
+                    <ellipse cx="200" cy="180" rx="70" ry="80" fill="#f5f5f5" stroke="#1e1b4b" stroke-width="3"/>
+                    
+                    <!-- Hair -->
+                    <path d="M130 160 Q140 100 200 90 Q260 100 270 160 Q270 130 250 110 Q200 80 150 110 Q130 130 130 160" fill="#1e1b4b"/>
+                    
+                    <!-- Glasses -->
+                    <g stroke="#6366f1" stroke-width="3" fill="none">
+                        <rect x="155" y="165" width="40" height="30" rx="5"/>
+                        <rect x="205" y="165" width="40" height="30" rx="5"/>
+                        <line x1="195" y1="180" x2="205" y2="180"/>
+                        <line x1="155" y1="175" x2="140" y2="170"/>
+                        <line x1="245" y1="175" x2="260" y2="170"/>
+                    </g>
+                    
+                    <!-- Eyes -->
+                    <circle cx="175" cy="180" r="4" fill="#1e1b4b"/>
+                    <circle cx="225" cy="180" r="4" fill="#1e1b4b"/>
+                    
+                    <!-- Nose -->
+                    <path d="M200 190 L195 210 L205 210" fill="none" stroke="#1e1b4b" stroke-width="2"/>
+                    
+                    <!-- Mouth -->
+                    <path d="M185 230 Q200 240 215 230" fill="none" stroke="#1e1b4b" stroke-width="2"/>
+                    
+                    <!-- Neck -->
+                    <rect x="185" y="250" width="30" height="40" fill="#f5f5f5" stroke="#1e1b4b" stroke-width="3"/>
+                    
+                    <!-- Body/Shirt -->
+                    <path d="M140 290 Q200 280 260 290 L280 350 Q200 360 120 350 Z" fill="#6366f1" stroke="#1e1b4b" stroke-width="3"/>
+                    
+                    <!-- Collar -->
+                    <path d="M185 290 L200 310 L215 290" fill="none" stroke="#1e1b4b" stroke-width="2"/>
+                    
+                    <!-- Decorative Elements -->
+                    <circle cx="320" cy="120" r="15" fill="none" stroke="#6366f1" stroke-width="2"/>
+                    <circle cx="80" cy="300" r="10" fill="#6366f1" opacity="0.5"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Work/Approach Section -->
+    <section id="about" class="section approach">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's work <em>together</em>.</h2>
+            </div>
+            
+            <div class="approach-content">
+                <p class="lead">
+                    From <strong>OSINT research</strong> to <strong>secure system design</strong>, 
+                    cybersecurity awareness to <strong>ethical hacking</strong>. I help organizations 
+                    and individuals build <em>secure, accessible</em> digital solutions — 
+                    the more challenging, the better.
+                </p>
+                
+                <a href="#contact" class="link-arrow">
+                    About my approach
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source/Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured <em>Projects</em>.</h2>
+                <p class="section-subtitle">
+                    From time to time I work on independent research and open source security tools. 
+                    Below are some of my notable works.
+                </p>
+            </div>
+            
+            <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h4 class="card-title">Mini OSINT Intelligence Dashboard</h4>
-                            <p class="card-text">
-                                Conducted an independent Open-Source Intelligence (OSINT) research project 
-                                using publicly available data sources.
-                            </p>
-                            <ul>
-                                <li>Applied ethical investigation techniques</li>
-                                <li>Search engine operators (Google Dorks)</li>
-                                <li>Social media analysis and open databases</li>
-                                <li>Developed analytical thinking and cybersecurity awareness</li>
-                            </ul>
-                            <div class="mt-3">
-                                <span class="badge bg-info">OSINT</span>
-                                <span class="badge bg-warning">Cybersecurity</span>
-                                <span class="badge bg-success">Research</span>
-                            </div>
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-number">01</span>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="bi bi-github"></i></a>
+                            <a href="#" class="project-link"><i class="bi bi-box-arrow-up-right"></i></a>
                         </div>
                     </div>
-                </div>
+                    <h3 class="project-title">Mini OSINT <em>Dashboard</em>.</h3>
+                    <p class="project-desc">
+                        An independent Open-Source Intelligence research project using publicly available 
+                        data sources. Applied ethical investigation techniques including Google Dorks, 
+                        social media analysis, and open databases.
+                    </p>
+                    <div class="project-stats">
+                        <span class="stat">Python</span>
+                        <span class="stat">OSINT</span>
+                        <span class="stat">Data Analysis</span>
+                    </div>
+                    <a href="#" class="project-cta">
+                        View Project
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </article>
 
                 <!-- Project 2 -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h4 class="card-title">CS50 Final Project - Harvard University</h4>
-                            <p class="card-text">
-                                Completed a final programming project as part of CS50x: Introduction to Computer Science.
-                            </p>
-                            <ul>
-                                <li>Applied core computer science concepts</li>
-                                <li>Algorithms and problem-solving</li>
-                                <li>Structured programming</li>
-                                <li>Strengthened logical reasoning and coding discipline</li>
-                            </ul>
-                            <div class="mt-3">
-                                <span class="badge bg-primary">CS50</span>
-                                <span class="badge bg-danger">Harvard</span>
-                                <span class="badge bg-secondary">Programming</span>
-                            </div>
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-number">02</span>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="bi bi-github"></i></a>
+                            <a href="#" class="project-link"><i class="bi bi-box-arrow-up-right"></i></a>
                         </div>
                     </div>
+                    <h3 class="project-title">CS50 <em>Final Project</em>.</h3>
+                    <p class="project-desc">
+                        Harvard University's CS50x Introduction to Computer Science final project. 
+                        Applied core CS concepts including algorithms, data structures, and structured 
+                        programming using C and Python.
+                    </p>
+                    <div class="project-stats">
+                        <span class="stat">C</span>
+                        <span class="stat">Python</span>
+                        <span class="stat">SQL</span>
+                        <span class="stat">Harvard</span>
+                    </div>
+                    <a href="#" class="project-cta">
+                        View Project
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-number">03</span>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="bi bi-shield-check"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Malware <em>Analysis</em>.</h3>
+                    <p class="project-desc">
+                        Advanced malware development and analysis research from SpylerBD certification. 
+                        Understanding threat actors' techniques to build better defense mechanisms.
+                    </p>
+                    <div class="project-stats">
+                        <span class="stat">Reverse Engineering</span>
+                        <span class="stat">Security</span>
+                    </div>
+                    <a href="#" class="project-cta">
+                        View Certificate
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work <em>Experience</em>.</h2>
+            </div>
+            
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <h3 class="exp-title">BDRCS <em>Volunteer</em></h3>
+                        <span class="exp-date">2023 — Present</span>
+                    </div>
+                    <p class="exp-role">Assistant Coordinator (ICT, Media & Communication)</p>
+                    <p class="exp-desc">
+                        Volunteered for over one year in community awareness programs on health, 
+                        sanitation, and disaster preparedness. Assisted in humanitarian response 
+                        during the Sylhet floods, supporting coordination and food distribution.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="section-padding bg-light">
+    <!-- Education Section -->
+    <section id="education" class="section education">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-graduation-cap me-3"></i>EDUCATION</h2>
+            <div class="section-header">
+                <h2 class="section-title">Education & <em>Certifications</em>.</h2>
+            </div>
             
-            <div class="row">
-                <!-- HSC -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h4 class="card-title">Higher Secondary Certificate (HSC) - Science</h4>
-                            <h5 class="text-muted">Govt. Bangabandhu College</h5>
-                            <p class="card-text">
-                                <strong>Board:</strong> Dhaka<br>
-                                <strong>GPA:</strong> 3.75/5.00
-                            </p>
-                            <div class="education-icon">
-                                <i class="fas fa-school fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
+            <div class="education-grid">
+                <div class="edu-item">
+                    <span class="edu-year">2024</span>
+                    <h3 class="edu-title">Higher Secondary <em>Certificate</em></h3>
+                    <p class="edu-school">Govt. Bangabandhu College, Dhaka Board</p>
+                    <span class="edu-grade">GPA 3.75/5.00</span>
                 </div>
-
-                <!-- SSC -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h4 class="card-title">Secondary School Certificate (SSC) - Science</h4>
-                            <h5 class="text-muted">Saratoli Muslim High School</h5>
-                            <p class="card-text">
-                                <strong>Board:</strong> Rajshahi<br>
-                                <strong>GPA:</strong> 5.00/5.00
-                            </p>
-                            <div class="education-icon">
-                                <i class="fas fa-university fa-2x text-success"></i>
-                            </div>
-                        </div>
-                    </div>
+                
+                <div class="edu-item featured">
+                    <span class="edu-year">2022</span>
+                    <h3 class="edu-title">Secondary School <em>Certificate</em></h3>
+                    <p class="edu-school">Saratoli Muslim High School, Rajshahi Board</p>
+                    <span class="edu-grade">GPA 5.00/5.00 🏆</span>
+                </div>
+                
+                <div class="edu-item cert">
+                    <span class="edu-year">2024</span>
+                    <h3 class="edu-title">CS50x <em>Harvard</em></h3>
+                    <p class="edu-school">Introduction to Computer Science</p>
+                    <span class="edu-badge">Certificate</span>
+                </div>
+                
+                <div class="edu-item cert">
+                    <span class="edu-year">2024</span>
+                    <h3 class="edu-title">Advanced Malware <em>Development</em></h3>
+                    <p class="edu-school">SpylerBD Cybersecurity</p>
+                    <span class="edu-badge">Certified</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Skills & Additional Info -->
-    <section id="skills" class="section-padding">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-tools me-3"></i>SKILLS & ADDITIONAL INFORMATION</h2>
             
-            <div class="row">
-                <!-- Technical Skills -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-header bg-primary text-white">
-                            <h5 class="mb-0"><i class="fas fa-code me-2"></i>Technical Skills</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="skill-tags">
-                                <span class="skill-tag">HTML</span>
-                                <span class="skill-tag">C++</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Algorithms</span>
-                                <span class="skill-tag">Data Structures</span>
-                                <span class="skill-tag">Problem Solving</span>
-                            </div>
-                        </div>
+            <div class="language-section">
+                <h3 class="subsection-title">Language <em>Proficiency</em></h3>
+                <div class="lang-grid">
+                    <div class="lang-item">
+                        <span class="lang-name">English</span>
+                        <span class="lang-level">TOEFL iBT 87</span>
                     </div>
-                </div>
-
-                <!-- Cybersecurity Skills -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-header bg-warning text-dark">
-                            <h5 class="mb-0"><i class="fas fa-shield-alt me-2"></i>Cybersecurity & OSINT</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="skill-tags">
-                                <span class="skill-tag">OSINT</span>
-                                <span class="skill-tag">Ethical Investigation</span>
-                                <span class="skill-tag">Information Verification</span>
-                                <span class="skill-tag">Malware Analysis</span>
-                                <span class="skill-tag">Security Awareness</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Languages -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-header bg-success text-white">
-                            <h5 class="mb-0"><i class="fas fa-language me-2"></i>Languages</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-circle text-success me-2"></i>English (TOEFL iBT - 87)</li>
-                                <li><i class="fas fa-circle text-success me-2"></i>English Grammar and Communication Course - Mentor's</li>
-                                <li><i class="fas fa-circle text-success me-2"></i>Bengali (Native)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Certifications -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-header bg-info text-white">
-                            <h5 class="mb-0"><i class="fas fa-certificate me-2"></i>Certifications & Courses</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-award text-info me-2"></i>CS50x - Harvard University</li>
-                                <li><i class="fas fa-award text-info me-2"></i>Advanced Malware Development - SpylerBD</li>
-                            </ul>
-                        </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Bengali</span>
+                        <span class="lang-level">Native</span>
                     </div>
                 </div>
             </div>
@@ -301,83 +361,56 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-dark text-white">
+    <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title text-white"><i class="fas fa-envelope me-3"></i>CONTACT ME</h2>
-            
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="card bg-secondary text-white shadow">
-                        <div class="card-body">
-                            <div class="contact-info">
-                                <div class="contact-item mb-4">
-                                    <i class="fas fa-phone fa-2x me-3"></i>
-                                    <div>
-                                        <h5>Phone</h5>
-                                        <p>(+88) 01521784659</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item mb-4">
-                                    <i class="fas fa-envelope fa-2x me-3"></i>
-                                    <div>
-                                        <h5>Email</h5>
-                                        <p>mdrivadhasannoyon@gmail.com</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item mb-4">
-                                    <i class="fas fa-globe fa-2x me-3"></i>
-                                    <div>
-                                        <h5>Website</h5>
-                                        <p>www.riyadstudy.com</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <i class="fas fa-map-marker-alt fa-2x me-3"></i>
-                                    <div>
-                                        <h5>Address</h5>
-                                        <p>Boalia - 6760, Ullapara, Sirajganj, Bangladesh</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="social-links mt-5 text-center">
-                                <a href="mailto:mdrivadhasannoyon@gmail.com" class="btn btn-light btn-lg mx-2">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                                <a href="tel:+8801521784659" class="btn btn-light btn-lg mx-2">
-                                    <i class="fas fa-phone"></i>
-                                </a>
-                                <a href="https://www.riyadstudy.com" class="btn btn-light btn-lg mx-2">
-                                    <i class="fas fa-globe"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="contact-content">
+                <h2 class="contact-title">Let's build something <em>secure</em> together.</h2>
+                <p class="contact-lead">
+                    Have a project in mind or want to discuss cybersecurity? 
+                    I'm always open to new opportunities and collaborations.
+                </p>
+                
+                <div class="contact-methods">
+                    <a href="mailto:mdrivadhasannoyon@gmail.com" class="contact-big">
+                        <span class="contact-label">Email me</span>
+                        <span class="contact-value">mdrivadhasannoyon@gmail.com</span>
+                    </a>
+                    
+                    <a href="tel:+8801521784659" class="contact-big">
+                        <span class="contact-label">Call me</span>
+                        <span class="contact-value">+88 01521784659</span>
+                    </a>
+                </div>
+                
+                <div class="contact-location">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Boalia - 6760, Ullapara, Sirajganj, Bangladesh</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-4">
+    <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2024 MD Riyad Hasan Noyon. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p class="copyright">© <span class="year">MMXXV</span>. Made in Bangladesh.</p>
+                    <p class="footer-tagline">Building secure digital futures.</p>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p>Hosted on GitHub Pages | Designed with Bootstrap 5</p>
+                
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">LinkedIn</a>
+                        <a href="#" class="footer-link">GitHub</a>
+                        <a href="#" class="footer-link">Twitter</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
