@@ -1,123 +1,106 @@
-// Main JavaScript
-
 document.addEventListener('DOMContentLoaded', function() {
-
+    
     // Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const menuClose = document.getElementById('menuClose');
     const fullscreenMenu = document.getElementById('fullscreenMenu');
-    const menuLinks = document.querySelectorAll('.menu-link');
-
-    function openMenu() {
-        fullscreenMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    
+    function toggleMenu() {
+        fullscreenMenu.classList.toggle('active');
+        document.body.style.overflow = fullscreenMenu.classList.contains('active') ? 'hidden' : '';
     }
-
-    function closeMenu() {
-        fullscreenMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    menuToggle.addEventListener('click', openMenu);
-    menuClose.addEventListener('click', closeMenu);
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+    
+    menuToggle.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', toggleMenu);
+    
+    // Close menu on link click
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('click', toggleMenu);
     });
-
-    // Close menu on escape key
+    
+    // Escape key to close menu
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && fullscreenMenu.classList.contains('active')) {
-            closeMenu();
+            toggleMenu();
         }
     });
-
+    
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
-
+    
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-
+        
         if (currentScroll > 100) {
-            navbar.classList.add('scrolled');
+            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
+            navbar.style.padding = '1rem 3rem';
         } else {
-            navbar.classList.remove('scrolled');
+            navbar.style.boxShadow = 'none';
+            navbar.style.padding = '1.5rem 3rem';
         }
-
+        
+        // Hide/show on scroll direction
+        if (currentScroll > lastScroll && currentScroll > 200) {
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            navbar.style.transform = 'translateY(0)';
+        }
+        
         lastScroll = currentScroll;
     });
-
-    // Intersection Observer for animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements
-    document.querySelectorAll('.project-card, .edu-item, .experience-item').forEach(el => {
-        el.style.opacity = '0';
-        observer.observe(el);
-    });
-
+    
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const offsetTop = target.offsetTop - 80;
+                const offset = target.offsetTop - 80;
                 window.scrollTo({
-                    top: offsetTop,
+                    top: offset,
                     behavior: 'smooth'
                 });
             }
         });
     });
-
-    // Dynamic year update
-    const yearSpan = document.querySelector('.year');
-    if (yearSpan) {
-        const currentYear = new Date().getFullYear();
-        const romanYear = toRoman(currentYear);
-        yearSpan.textContent = romanYear;
-    }
-
-    // Convert to Roman numerals
-    function toRoman(num) {
-        const roman = {
-            M: 1000, CM: 900, D: 500, CD: 400,
-            C: 100, XC: 90, L: 50, XL: 40,
-            X: 10, IX: 9, V: 5, IV: 4, I: 1
-        };
-        let str = '';
-        for (let i of Object.keys(roman)) {
-            const q = Math.floor(num / roman[i]);
-            num -= q * roman[i];
-            str += i.repeat(q);
-        }
-        return str;
-    }
-
-    // Parallax effect for avatar
-    const avatar = document.querySelector('.avatar');
-    if (avatar && window.innerWidth > 968) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.05;
-            avatar.style.transform = `translateY(${rate}px)`;
+    
+    // Parallax effect for avatar on mouse move (desktop only)
+    const avatarWrapper = document.querySelector('.avatar-wrapper');
+    if (avatarWrapper && window.innerWidth > 968) {
+        document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            
+            const x = (clientX / innerWidth - 0.5) * 20;
+            const y = (clientY / innerHeight - 0.5) * 20;
+            
+            avatarWrapper.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
         });
     }
-
-    console.log('🚀 Portfolio loaded successfully!');
-    console.log('👨‍💻 Designed with minimalism in mind');
+    
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe sections
+    document.querySelectorAll('section:not(#home)').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(50px)';
+        section.style.transition = 'all 0.8s ease';
+        observer.observe(section);
+    });
+    
+    console.log('✨ Premium Portfolio Loaded');
 });
